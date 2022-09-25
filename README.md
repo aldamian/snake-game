@@ -1,2 +1,2 @@
 # snake-game
-Snake game in Python
+Jocul Snake implementat în Python.
