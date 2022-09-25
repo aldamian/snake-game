@@ -24,11 +24,11 @@ pygame.display.set_caption('Snake Game')
 clock = pygame.time.Clock()
 
 snake_size = 10
-snake_speed = 15
+snake_speed = 12
 
 # definirea fontului
-font_style = pygame.font.SysFont("bahnschrift", 25)
-score_font = pygame.font.SysFont("comicsansms", 35)
+message_font = pygame.font.SysFont("ubuntu", 30)
+score_font = pygame.font.SysFont("ubuntu", 25)
 
 
 def print_score(score):
@@ -38,7 +38,7 @@ def print_score(score):
 
 def draw_snake(snake_size, snake_pixels):
     for pixel in snake_pixels:
-        pygame.draw.rect(game_display, BLACK, [pixel[0],
+        pygame.draw.rect(game_display, WHITE, [pixel[0],
                          pixel[1], snake_size, snake_size])
 
 
@@ -67,8 +67,8 @@ def run_game():
         # opțiunea de a juca din nou sau de a ieși
         while game_close:
             game_display.fill(BLACK)
-            game_over_message = font_style.render("You Lost! Press Q-Quit or C-Play Again", True, RED)
-            game_display.blit(game_over_message, [WIDTH / 6, HEIGHT / 3])
+            game_over_message = message_font.render("You Lost! Press Q-Quit or C-Play Again", True, RED)
+            game_display.blit(game_over_message, [WIDTH / 9, HEIGHT / 3])
             print_score(snake_length - 1)
             pygame.display.update()
 
